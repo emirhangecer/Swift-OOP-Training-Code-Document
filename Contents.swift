@@ -53,13 +53,21 @@ sahin.bilgiAl()
 
 
 class Fonksiyonlar {
-    
+    //Geri dönüş değeri olmayan (void)
     func iltifat1(){
         let sonuc = "Seni seviom Beyza"
         print(sonuc)
+    }
+    //Geri dönüş değeri olan (return)
+    func iltifat2() -> String {
+        let sonuc = "Seni seviom Beyza"
+        return sonuc
     }
 }
 
 let beyza = Fonksiyonlar()
 
 beyza.iltifat1()
+
+let gelenSonuc = beyza.iltifat2()
+print("Gelen Sonuç: \(gelenSonuc)")
