@@ -63,6 +63,27 @@ class Fonksiyonlar {
         let sonuc = "Seni seviom Beyza"
         return sonuc
     }
+    //Parametre girişi olan
+    func iltifat3(isim:String){
+        let sonuc = "Seni seviom \(isim)"
+        print(sonuc)
+    }
+    
+    func toplama(sayi1: Int, sayi2:Int) -> Int {
+        let toplam = sayi1 + sayi2
+        return toplam
+    }
+    
+    //Overloading
+    func carpma(sayi1: Int, sayi2:Int) {
+        print("Çarpma : \(sayi1 * sayi2)")
+    }
+    func carpma(sayi1: Double, sayi2:Double) {
+        print("Çarpma : \(sayi1 * sayi2)")
+    }
+    func carpma(sayi1: Int, sayi2:Int, isim:String) {
+        print("Çarpma : \(sayi1 * sayi2) - işlemi yapan: \(isim)")
+    }
 }
 
 let beyza = Fonksiyonlar()
@@ -71,3 +92,12 @@ beyza.iltifat1()
 
 let gelenSonuc = beyza.iltifat2()
 print("Gelen Sonuç: \(gelenSonuc)")
+
+beyza.iltifat3(isim: "Beyza")
+
+let gelenToplam = beyza.toplama(sayi1: 10, sayi2: 20)
+print("Gelen Toplam: \(gelenToplam)")
+
+beyza.carpma(sayi1: 20, sayi2: 10)
+
+beyza.carpma(sayi1: 10, sayi2: 10, isim: "beyza")
