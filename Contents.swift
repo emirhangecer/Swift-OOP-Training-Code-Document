@@ -193,3 +193,78 @@ print("Film yıl: \(f1.film_yil!)")
 print("Film kategori: \(f1.kategori!.kategori_ad!)")
 print("Film yönetmeni: \(f1.yonetmen!.yönetmen_ad!)")
 
+
+
+class Ev {
+    
+    var pencereSayisi:Int?
+    
+    init(pencereSayisi: Int) {
+        self.pencereSayisi = pencereSayisi
+    }
+}
+
+class Saray: Ev{
+    
+    var kuleSayisi: Int?
+    
+    init(kuleSayisi: Int, pencereSayisi:Int) {
+        self.kuleSayisi = kuleSayisi
+        super.init(pencereSayisi: pencereSayisi)
+    }
+    
+}
+
+class Villa: Ev {
+    
+    var GarajVarMi: Bool?
+    
+    init(GarajVarMi: Bool, pencereSayisi:Int) {
+        self.GarajVarMi = GarajVarMi
+        super.init(pencereSayisi: pencereSayisi)
+    }
+}
+let topkapiSarayi = Saray(kuleSayisi: 5, pencereSayisi: 10)
+let KardeslerVilla = Villa(GarajVarMi: true, pencereSayisi: 15)
+
+
+print(topkapiSarayi.kuleSayisi!)
+print(topkapiSarayi.pencereSayisi!)
+
+print(KardeslerVilla.GarajVarMi!)
+print(KardeslerVilla.pencereSayisi!)
+
+
+class Hayvan {
+    func sesCikar(){
+        print("Sesim Yok")
+    }
+}
+
+class Memeli:Hayvan {
+    
+}
+
+class Kedi:Memeli {
+    override func sesCikar() {
+        print("Miyav Miyav")
+    }
+}
+
+class Kopek:Memeli {
+    override func sesCikar() {
+        print("Ben gs tutuom")
+    }
+}
+
+let hayvan = Hayvan()
+let memeli = Memeli()
+let kedi   = Kedi()
+let köpek  = Kopek()
+
+hayvan.sesCikar() //Kalıtım yok, kendi fonksiyonunu çalıştırdı.
+memeli.sesCikar() //Kalıtım var, üst sınıfın fonksiyonunu çalıştırdı.
+kedi.sesCikar()   //Kalıtım var, kendi metodunu çalıştırdı.
+köpek.sesCikar()  //Kalıtım var, kendi metodunu çalıştırdı.
+
+//Tip dönüşümü
