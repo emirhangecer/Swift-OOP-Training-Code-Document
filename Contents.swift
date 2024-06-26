@@ -268,3 +268,49 @@ kedi.sesCikar()   //Kalıtım var, kendi metodunu çalıştırdı.
 köpek.sesCikar()  //Kalıtım var, kendi metodunu çalıştırdı.
 
 //Tip dönüşümü
+
+//Upcasting
+
+var ev = Saray(kuleSayisi: 3, pencereSayisi: 10) as Ev
+
+//Downcasting
+
+var saray = Ev(pencereSayisi: 6) as? Saray
+
+//Tip kontrolü
+
+if ev is Ev {
+    print("Nesne ev sınıfındadır.")
+}
+else{
+    print("Nesne ev sınıfından değildir.")
+}
+
+//Protocol
+
+protocol MyProtocol{
+    var degisken: Int {get set}
+    
+    func metod1()
+    func metod2() -> String
+}
+class ClassA : MyProtocol{
+    
+    var degisken: Int = 10
+    
+    func metod1() {
+        print("metod 1 çalıştı")
+    }
+    
+    func metod2() -> String {
+        return "Metod 2 çalıştı"
+    }
+}
+
+var g = ClassA()
+
+print(g.degisken)
+
+g.metod1()
+
+print(g.metod2())
